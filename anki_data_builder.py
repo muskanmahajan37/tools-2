@@ -23,7 +23,7 @@ class AnkiCardBuilder:
   def __write_csv(self, items):
     with open(self.csv_output, 'w') as file:
 
-      c = csv.writer(file, delimiter='\t', lineterminator='\n')
+      c = csv.writer(file, delimiter='\t', lineterminator='\n',encoding='utf-8')
       # Add '#' to first field, so Anki treats the line as a comment line.
       c.writerow(['# FRONT', 'BACK'])
       for item in items:
